@@ -1,0 +1,35 @@
+{
+    "name": "NPTEL Chrome Extension",
+    "version": "0.1.0",
+    "description": "Calculate average marks",
+    "permissions": ["storage", "tabs"],
+    "host_permissions": ["https://*.onlinecourses.nptel.ac.in/*"],
+    "background": {
+      "service_worker": "background.js"
+    },
+    "content_scripts": [
+      {
+        "matches": ["https://*.onlinecourses.nptel.ac.in/*/student/home"],
+        "js": ["contentScript.js"]
+      }
+    ],
+    "web_accessible_resources": [
+      {
+        "resources": [
+          
+        ],
+        "matches": ["https://*.onlinecourses.nptel.ac.in/*"]
+      }
+    ],
+    "action": {
+      "default_icon": {
+        "16": "assets/ext-icon.png",
+        "24": "assets/ext-icon.png",
+        "32": "assets/ext-icon.png"
+      },
+      "default_title": "NPTEL Chrome Ext",
+      "default_popup": "popup.html"
+    },
+    "manifest_version": 3
+  }
+  
